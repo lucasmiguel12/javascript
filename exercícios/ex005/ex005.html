@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com o DOM</title>
+    <style>
+        body{
+            background-color: rgb(56, 33, 138);
+            color: white;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando os estudos de DOM</h1>
+    <p class="msg2">Aqui vai o resultado</p>
+    <p name="msg1">Aprendendo a usar <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        var corpo = window.document.getElementsByTagName('body')[0];
+        var p1 = window.document.getElementsByTagName('p')[1];
+        window.document.write('Está escrito assim: ' + p1.innerText) //mostrar o que está escrito
+        document.write(p1.innerHTML)// aqui mostra com alguma atualização do html no caso o strong
+        p1.style.color = 'blue';//muda a cor da variavel
+        corpo.style.backgroundColor = 'green';
+        // var msg = window.document.getElementById('msg') forma padrão
+        var msg = window.document.querySelector('div#msg') //forma com selector
+        msg.style.background = 'pink';
+        msg.innerText = 'Salve' //mudando o que está escrito no id
+        var msg1 = window.document.getElementsByName('msg1')[0];
+        msg1.style.background = 'yellow'
+        var msg2 = window.document.getElementsByClassName('msg2')[0]
+        msg2.style.color = 'orange'
+    </script>
+</body>
+</html>
